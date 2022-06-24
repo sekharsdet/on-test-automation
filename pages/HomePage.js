@@ -16,9 +16,9 @@ exports.HomePage = class HomePage extends BasePage {
     
 
     async closeTheMarketingPopup() {
-        if (this.verifyElementIsDisplayed(this.closeTheMarketingTab)) {
-            await this.click(this.closeTheMarketingTab)
-        }
+        // if (this.verifyElementIsDisplayed(this.closeTheMarketingTab)) {
+        //     await this.click(this.closeTheMarketingTab)
+        // }
     }
 
     async acceptprivacySettings() {
