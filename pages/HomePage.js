@@ -13,18 +13,16 @@ exports.HomePage = class HomePage extends BasePage {
     async selectCategoryWomen() {
         await this.clickOnFirst(this.categoryWomen)
     }
+    
+
+    async closeTheMarketingPopup() {
+        if (this.verifyElementIsDisplayed(this.closeTheMarketingTab)) {
+            await this.click(this.closeTheMarketingTab)
+        }
+    }
 
     async acceptprivacySettings() {
-
         await this.click(this.acceptprivacySettingsButton)
 
     }
-
-    async closeTheMarketingPopup() {
-        // if (this.verifyElementIsDisplayed(this.closeTheMarketingTab)) {
-        //     await this.click(this.closeTheMarketingTab)
-        // }
-
-    }
-
 }
