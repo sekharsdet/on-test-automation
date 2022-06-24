@@ -5,22 +5,23 @@ exports.ProductPage = class ProductPage extends BasePage {
         super(page);
 
         this.sizeSelector = ".size-selector>.sizes__wrapper>.sizes__size";
-        this.addToCartButton = ".purchase-pod__button-content"
+        this.addToCartButton = ".purchase-pod__button-content";
+        this.yourCartButton = "a.icon-bag>span";
+
     }
 
 
     async selectTheSize(givenSize) {
-        const sizes = await page.$$(this.sizeSelector)
-        for (let i = sizes.length - 1; i >= 0; i--) {
-            let availableSize = await sizes[i].textContent.trim()
-            if (availableSize == givenSize) {
-                await sizes[i].click();
-            }
-        }
+        await this.page.locator(this.sizeSelector,{ hasText: givenSize }).click()
     }
 
     async clickOnAddToCart() {
         await this.click(this.addToCartButton);
+    }    
+
+
+    async navigateToCheckoutPage(){
+        await this.click(this.yourCartButton)
     }
 
 

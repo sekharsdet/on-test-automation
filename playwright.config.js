@@ -6,7 +6,7 @@ const config = {
     video: 'retain-on-failure',
     trace: 'retain-on-failure',
     retries: 2,
-    timeout: 60000,
+    timeout: 100000,
     reporter: 'allure-playwright',
     ignoreHTTPSErrors: true,
     baseURL: "https://staging-beta.on-running.com"
@@ -21,7 +21,7 @@ const config = {
     ['allure-playwright']
   ],
   launchOptions: {
-    args: ['--start-maximized']
+    args: ["--start-maximized"]
   }
 };
 
