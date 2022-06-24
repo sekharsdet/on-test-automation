@@ -11,6 +11,9 @@ exports.PaymentPage = class PaymentPage extends BasePage {
         this.placeYourOrder = ".button-container__button";
         this.productTitleText = ".order-item-block__title";
         this.orderQuanityText = ".order-item-block__quantity-number";
+        this.cardIframe = ".adyen-checkout__card__cardNumber__input>iframe";
+        this.expDateIframe = ".adyen-checkout__card__exp-date__input>iframe";
+        this.cvvIframe = ".adyen-checkout__card__cvc__input>iframe";
     }
 
     async getOrderQuanity() {
@@ -26,9 +29,9 @@ exports.PaymentPage = class PaymentPage extends BasePage {
     }
 
     async enterCardDetails(cardNumber, expDate, cvv, name) {
-        await this.page.frameLocator(".adyen-checkout__card__cardNumber__input>iframe").nth(1).locator(this.cardNumberTextField).fill(cardNumber);
-        await this.page.frameLocator(".adyen-checkout__card__exp-date__input>iframe").nth(0).locator(this.expiryDateTextField).fill(expDate);
-        await this.page.frameLocator(".adyen-checkout__card__cvc__input>iframe").nth(1).locator(this.cvvTextField).fill(cvv);
+        await this.page.frameLocator(this.cardIframe).nth(1).locator(this.cardNumberTextField).fill(cardNumber);
+        await this.page.frameLocator(this.expDateIframe).nth(0).locator(this.expiryDateTextField).fill(expDate);
+        await this.page.frameLocator(this.cvvIframe).nth(1).locator(this.cvvTextField).fill(cvv);
         await this.enterText(this.cardHolderNameTextField, name);
     }
 
