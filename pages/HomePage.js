@@ -22,7 +22,6 @@ exports.HomePage = class HomePage extends BasePage {
     }
 
     async acceptprivacySettings() {
-        await this.click(this.acceptprivacySettingsButton)
-
+        //await this.click(this.acceptprivacySettingsButton)
     }
 }
