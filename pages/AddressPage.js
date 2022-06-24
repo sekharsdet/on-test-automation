@@ -23,13 +23,9 @@ exports.AddressPage = class AddressPage extends BasePage {
 
 
     async enterEmail(email) {
+        await this.page.locator(this.emailTextField).waitFor()
         await this.enterText(this.emailTextField, email);
     }
-
-    async enterEmail(email) {
-        await this.enterText(this.emailTextField, email);
-    }
-
 
     async clickOnContinueToShipping() {
         await this.click(this.continueToShippingButton)
