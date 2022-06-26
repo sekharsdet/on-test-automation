@@ -37,3 +37,7 @@ Tests are located at on-test-automation\tests\testCheckout.spec.js
 - NodeJS
 - playwright
 - Allure report
+- GitHub Actions 
+
+### Notes:
+ - GitHub Actions are configured for the project, but all the available GitHub Action runners are hosted in the US, Hence Our tests are failing (Due to Geo location) and not able to generate the report. Please let me know if you need more details on the GitHub Actions and its Runners
